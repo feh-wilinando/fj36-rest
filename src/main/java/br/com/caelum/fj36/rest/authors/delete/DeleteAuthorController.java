@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import static org.springframework.http.ResponseEntity.noContent;
-import static org.springframework.http.ResponseEntity.notFound;
 
 @AuthorController
 class DeleteAuthorController {
@@ -20,10 +19,8 @@ class DeleteAuthorController {
     @DeleteMapping("{id}")
     ResponseEntity<?> deleteAuthorById(@PathVariable Long id) {
 
-        if (service.removeAuthorBy(id)) {
-            return noContent().build();
-        }
+        service.removeAuthorBy(id);
 
-        return notFound().build();
+        return noContent().build();
     }
 }
