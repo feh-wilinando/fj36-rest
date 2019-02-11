@@ -8,4 +8,12 @@ class AuthorView {
     AuthorView(Author author) {
         this.author = author;
     }
+
+    public Long getId() {
+        return author.getId();
+    }
+
+    public String getName() {
+        return author.getName();
+    }
 }

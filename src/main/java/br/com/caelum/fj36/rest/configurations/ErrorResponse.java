@@ -11,4 +11,8 @@ public class ErrorResponse {
     public static ErrorResponse createErrorWith(String... messages) {
         return new ErrorResponse(messages);
     }
+
+    public String[] getMessages() {
+        return messages;
+    }
 }

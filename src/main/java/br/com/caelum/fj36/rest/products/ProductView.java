@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 
 import java.math.BigDecimal;
 
+import static org.springframework.hateoas.mvc.BasicLinkBuilder.linkToCurrentMapping;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
@@ -20,7 +21,7 @@ public class ProductView extends ResourceSupport {
 
         Author author = product.getAuthor();
 
-        Link authorLink = linkTo(methodOn(AuthorController.class).findById(author.getId()))
+        Link authorLink = linkToCurrentMapping().slash("authors").slash(author.getId())
                 .withRel("author")
                 .withMedia(MediaType.APPLICATION_JSON_VALUE)
                 .withTitle("Show author details")

@@ -7,13 +7,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import javax.servlet.http.HttpServletRequest;
-
-@ControllerAdvice
+@ControllerAdvice(basePackageClasses = AuthorExceptionHandler.class)
 public class AuthorExceptionHandler {
 
     @ExceptionHandler(AuthorNotFoundException.class)
-    public ResponseEntity<?> notFound(HttpServletRequest request, AuthorNotFoundException exception) {
+    public ResponseEntity<?> notFound(AuthorNotFoundException exception) {
 
         ErrorResponse error = ErrorResponse.createErrorWith(exception.getMessage());
 

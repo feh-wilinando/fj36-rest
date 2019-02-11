@@ -2,6 +2,8 @@ package br.com.caelum.fj36.rest.products;
 
 import br.com.caelum.fj36.rest.configurations.ErrorResponse;
 import br.com.caelum.fj36.rest.shared.exceptions.ProductNotFoundException;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -9,7 +11,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import javax.servlet.http.HttpServletRequest;
 
-@ControllerAdvice
+@ControllerAdvice(basePackageClasses = ProductExceptionHandler.class)
 public class ProductExceptionHandler {
 
     @ExceptionHandler(ProductNotFoundException.class)
