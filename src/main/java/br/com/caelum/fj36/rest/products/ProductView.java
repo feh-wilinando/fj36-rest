@@ -1,5 +1,7 @@
 package br.com.caelum.fj36.rest.products;
 
+import br.com.caelum.fj36.rest.authors.AuthorController;
+import br.com.caelum.fj36.rest.shared.models.Author;
 import br.com.caelum.fj36.rest.shared.models.Product;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.ResourceSupport;
@@ -16,7 +18,9 @@ public class ProductView extends ResourceSupport {
     public ProductView(Product product) {
         this.product = product;
 
-        Link authorLink = linkTo(methodOn(ProductController.class).showAuthorOfProductId(product.getId()))
+        Author author = product.getAuthor();
+
+        Link authorLink = linkTo(methodOn(AuthorController.class).findById(author.getId()))
                 .withRel("author")
                 .withMedia(MediaType.APPLICATION_JSON_VALUE)
                 .withTitle("Show author details")
