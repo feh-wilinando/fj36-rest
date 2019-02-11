@@ -1,6 +1,6 @@
 package br.com.caelum.fj36.rest.shared.models;
 
-import br.com.caelum.fj36.rest.shared.commands.UpdateProductInfoCommand;
+import br.com.caelum.fj36.rest.shared.commands.UpdateBasicInfoCommand;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Product {
+public class Book {
     private static final AtomicLong counter = new AtomicLong();
 
     private Long id;
@@ -24,11 +24,11 @@ public class Product {
      * @deprecated frameworks only
      */
     @Deprecated
-    private Product() { }
+    private Book() { }
 
 
 
-    public Product(String isbn, String name, BigDecimal price, Author author) {
+    public Book(String isbn, String name, BigDecimal price, Author author) {
         this.id = counter.incrementAndGet();
         this.isbn = isbn;
         this.name = name;
@@ -56,7 +56,7 @@ public class Product {
         return author;
     }
 
-    public void updateBy(UpdateProductInfoCommand updateCommand) {
+    public void updateBy(UpdateBasicInfoCommand updateCommand) {
         isbn = updateCommand.getIsbn();
         name = updateCommand.getName();
         price = updateCommand.getPrice();

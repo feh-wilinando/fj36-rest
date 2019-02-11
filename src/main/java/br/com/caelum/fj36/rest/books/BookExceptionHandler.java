@@ -1,9 +1,7 @@
-package br.com.caelum.fj36.rest.products;
+package br.com.caelum.fj36.rest.books;
 
 import br.com.caelum.fj36.rest.configurations.ErrorResponse;
-import br.com.caelum.fj36.rest.shared.exceptions.ProductNotFoundException;
-import org.springframework.core.Ordered;
-import org.springframework.core.annotation.Order;
+import br.com.caelum.fj36.rest.shared.exceptions.BookNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -11,11 +9,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import javax.servlet.http.HttpServletRequest;
 
-@ControllerAdvice(basePackageClasses = ProductExceptionHandler.class)
-public class ProductExceptionHandler {
+@ControllerAdvice(basePackageClasses = BookExceptionHandler.class)
+public class BookExceptionHandler {
 
-    @ExceptionHandler(ProductNotFoundException.class)
-    public ResponseEntity<?> productNotFoundHandler(HttpServletRequest request, ProductNotFoundException e) {
+    @ExceptionHandler(BookNotFoundException.class)
+    public ResponseEntity<?> productNotFoundHandler(HttpServletRequest request, BookNotFoundException e) {
         System.err.println(e);
 
         ErrorResponse errorPayload = ErrorResponse.createErrorWith(e.getMessage());

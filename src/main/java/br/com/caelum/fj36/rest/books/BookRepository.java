@@ -1,6 +1,6 @@
-package br.com.caelum.fj36.rest.products;
+package br.com.caelum.fj36.rest.books;
 
-import br.com.caelum.fj36.rest.shared.models.Product;
+import br.com.caelum.fj36.rest.shared.models.Book;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
@@ -12,28 +12,28 @@ import java.util.Map;
 import java.util.Optional;
 
 @Repository
-public class ProductRepository {
+public class BookRepository {
 
 
 
-    private static final Map<Long, Product> database = new HashMap<>();
+    private static final Map<Long, Book> database = new HashMap<>();
 
 
     @CacheEvict(cacheNames = "products", allEntries = true)
-    public void save(Product product) {
-        database.put(product.getId(), product);
+    public void save(Book book) {
+        database.put(book.getId(), book);
     }
 
     @Cacheable(cacheNames = "products")
-    public Optional<Product> findById(Long id) {
+    public Optional<Book> findById(Long id) {
         return Optional.ofNullable(database.get(id));
     }
 
-    public void delete(Product product) {
-        database.remove(product.getId());
+    public void delete(Book book) {
+        database.remove(book.getId());
     }
 
-    public List<Product> findAll() {
+    public List<Book> findAll() {
         return new ArrayList<>(database.values());
     }
 }
