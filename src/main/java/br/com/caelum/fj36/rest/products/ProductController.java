@@ -34,15 +34,15 @@ import static org.springframework.http.ResponseEntity.ok;
 public class ProductController {
 
     private final ProductRepository repository;
-    private final Converter<ProductDTO, Product> converter;
+    private final Converter<ProductInfoDTO, Product> converter;
 
-    public ProductController(ProductRepository repository, Converter<ProductDTO, Product> converter) {
+    public ProductController(ProductRepository repository, Converter<ProductInfoDTO, Product> converter) {
         this.repository = repository;
         this.converter = converter;
     }
 
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody @Valid ProductDTO productDTO) {
+    public ResponseEntity<?> create(@RequestBody @Valid ProductInfoDTO productDTO) {
         Product product = converter.convert(productDTO);
 
         repository.save(product);
@@ -87,7 +87,7 @@ public class ProductController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<?> updateProduct(@PathVariable Long id, @RequestBody @Valid ProductDTO productDTO) {
+    public ResponseEntity<?> updateProduct(@PathVariable Long id, @RequestBody @Valid ProductInfoDTO productDTO) {
 
         Optional<Product> optionalProduct = repository.findById(id);
 

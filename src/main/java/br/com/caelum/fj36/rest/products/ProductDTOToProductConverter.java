@@ -8,7 +8,7 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ProductDTOToProductConverter implements Converter<ProductDTO, Product> {
+public class ProductDTOToProductConverter implements Converter<ProductInfoDTO, Product> {
 
     private final AuthorRepository repository;
 
@@ -17,7 +17,7 @@ public class ProductDTOToProductConverter implements Converter<ProductDTO, Produ
     }
 
     @Override
-    public Product convert(ProductDTO source) {
+    public Product convert(ProductInfoDTO source) {
         Long authorId = source.getAuthorId();
 
         Author author = repository.findById(authorId).orElseThrow(() -> new AuthorNotFoundException(String.format("Not found author with id %s", authorId)));

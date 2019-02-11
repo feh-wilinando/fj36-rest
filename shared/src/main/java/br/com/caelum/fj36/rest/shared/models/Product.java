@@ -1,6 +1,6 @@
 package br.com.caelum.fj36.rest.shared.models;
 
-import br.com.caelum.fj36.rest.shared.commands.UpdateProductCommand;
+import br.com.caelum.fj36.rest.shared.commands.UpdateProductInfoCommand;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -56,7 +56,7 @@ public class Product {
         return author;
     }
 
-    public void updateBy(UpdateProductCommand updateCommand) {
+    public void updateBy(UpdateProductInfoCommand updateCommand) {
         isbn = updateCommand.getIsbn();
         name = updateCommand.getName();
         price = updateCommand.getPrice();
