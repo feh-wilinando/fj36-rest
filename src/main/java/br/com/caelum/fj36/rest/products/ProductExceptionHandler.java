@@ -1,5 +1,6 @@
 package br.com.caelum.fj36.rest.products;
 
+import br.com.caelum.fj36.rest.configurations.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -14,20 +15,8 @@ public class ProductExceptionHandler {
     public ResponseEntity<?> productNotFoundHandler(HttpServletRequest request, ProductNotFoundException e) {
         System.err.println(e);
 
-        ClientError errorPayload = new ClientError(e.getMessage());
+        ErrorResponse errorPayload = ErrorResponse.createErrorWith(e.getMessage());
+
         return new ResponseEntity<>(errorPayload, HttpStatus.NOT_FOUND);
-    }
-
-
-    static class ClientError {
-        private String message;
-
-        public ClientError(String message) {
-            this.message = message;
-        }
-
-        public String getMessage() {
-            return message;
-        }
     }
 }

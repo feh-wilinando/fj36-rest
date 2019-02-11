@@ -1,6 +1,6 @@
 package br.com.caelum.fj36.rest.products;
 
-import br.com.caelum.fj36.rest.models.Product;
+import br.com.caelum.fj36.rest.shared.models.Product;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.ResourceSupport;
 import org.springframework.http.MediaType;

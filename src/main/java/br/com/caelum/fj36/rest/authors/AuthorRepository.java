@@ -1,6 +1,6 @@
 package br.com.caelum.fj36.rest.authors;
 
-import br.com.caelum.fj36.rest.models.Author;
+import br.com.caelum.fj36.rest.shared.models.Author;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;

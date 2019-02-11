@@ -1,4 +1,4 @@
-package br.com.caelum.fj36.rest.exceptions;
+package br.com.caelum.fj36.rest.shared.exceptions;
 
 public class AuthorNotFoundException extends RuntimeException {
 

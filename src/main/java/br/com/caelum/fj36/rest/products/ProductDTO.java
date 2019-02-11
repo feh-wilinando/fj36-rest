@@ -1,5 +1,7 @@
 package br.com.caelum.fj36.rest.products;
 
+import br.com.caelum.fj36.rest.shared.commands.UpdateProductCommand;
+
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;

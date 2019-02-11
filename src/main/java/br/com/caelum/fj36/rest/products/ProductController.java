@@ -1,8 +1,7 @@
 package br.com.caelum.fj36.rest.products;
 
-import br.com.caelum.fj36.rest.models.Author;
-import br.com.caelum.fj36.rest.models.Product;
-import org.springframework.boot.autoconfigure.web.ResourceProperties;
+import br.com.caelum.fj36.rest.shared.models.Author;
+import br.com.caelum.fj36.rest.shared.models.Product;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.http.CacheControl;
 import org.springframework.http.MediaType;

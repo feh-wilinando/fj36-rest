@@ -1,6 +1,6 @@
 package br.com.caelum.fj36.rest.products;
 
-import br.com.caelum.fj36.rest.models.Product;
+import br.com.caelum.fj36.rest.shared.models.Product;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;

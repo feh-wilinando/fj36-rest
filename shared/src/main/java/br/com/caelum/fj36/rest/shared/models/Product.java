@@ -1,6 +1,6 @@
-package br.com.caelum.fj36.rest.models;
+package br.com.caelum.fj36.rest.shared.models;
 
-import br.com.caelum.fj36.rest.products.UpdateProductCommand;
+import br.com.caelum.fj36.rest.shared.commands.UpdateProductCommand;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
