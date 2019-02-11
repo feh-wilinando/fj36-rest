@@ -1,5 +1,6 @@
 package br.com.caelum.fj36.rest.products;
 
+import br.com.caelum.fj36.rest.shared.exceptions.ProductNotFoundException;
 import br.com.caelum.fj36.rest.shared.models.Author;
 import br.com.caelum.fj36.rest.shared.models.Product;
 import org.springframework.core.convert.converter.Converter;

@@ -1,4 +1,4 @@
-package br.com.caelum.fj36.rest.products;
+package br.com.caelum.fj36.rest.shared.exceptions;
 
 public class ProductNotFoundException extends RuntimeException {
 
