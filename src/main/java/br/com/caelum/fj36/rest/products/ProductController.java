@@ -99,15 +99,4 @@ public class ProductController {
 
         return notFound().build();
     }
-
-    @GetMapping("{id}/authors")
-    public ResponseEntity<Author> showAuthorOfProductId(@PathVariable Long id) {
-        Optional<Author> optionalAuthor = repository.findById(id).map(Product::getAuthor);
-
-        if (optionalAuthor.isPresent()) {
-            return ok(optionalAuthor.get());
-        }
-
-        return notFound().build();
-    }
 }
