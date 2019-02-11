@@ -1,21 +1,17 @@
 package br.com.caelum.fj36.rest.authors.create;
 
-import br.com.caelum.fj36.rest.authors.AuthorDTO;
+import br.com.caelum.fj36.rest.authors.AuthorController;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 import java.net.URI;
 
 import static org.springframework.http.ResponseEntity.created;
 
-@RestController
-@RequestMapping("authors")
+@AuthorController
 class CreateAuthorController {
-
 
     private final CreateAuthorService service;
 

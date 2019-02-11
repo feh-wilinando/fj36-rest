@@ -1,18 +1,15 @@
 package br.com.caelum.fj36.rest.authors.delete;
 
+import br.com.caelum.fj36.rest.authors.AuthorController;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import static org.springframework.http.ResponseEntity.noContent;
 import static org.springframework.http.ResponseEntity.notFound;
 
-@RestController
-@RequestMapping("authors")
+@AuthorController
 class DeleteAuthorController {
-
 
     private final DeleteAuthorService service;
 
