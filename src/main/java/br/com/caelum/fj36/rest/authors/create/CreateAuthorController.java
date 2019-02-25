@@ -1,14 +1,13 @@
 package br.com.caelum.fj36.rest.authors.create;
 
+import static org.springframework.http.ResponseEntity.created;
+
 import br.com.caelum.fj36.rest.authors.AuthorController;
+import java.net.URI;
+import javax.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
-import javax.validation.Valid;
-import java.net.URI;
-
-import static org.springframework.http.ResponseEntity.created;
 
 @AuthorController
 class CreateAuthorController {
